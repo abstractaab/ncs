@@ -5,7 +5,8 @@ var app = express();
 
 app.get('/:hex', function (req, res) {
   request.get('http://encycolorpedia.se/' + req.params.hex + '/natural-color-system-ncs').end(function (err, response) {
-    res.header("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Content-Type", "application/json");
     var colors = [];
     colors.push(req.params.hex);
     colors.basehex = req.params.hex;
@@ -54,7 +55,7 @@ app.get('/:hex', function (req, res) {
         colors[15]
       ],
     }
-    res.send(map);
+    res.json(map);
   });
 });
 
