@@ -1,6 +1,9 @@
 {
   "name": "ncs",
   "version": "0.0.1",
+  "engines": {
+    "node": "0.10.x"
+  },
   "description": "Get NCS from encycolorpedia",
   "main": "app.js",
   "scripts": {
