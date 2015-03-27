@@ -63,6 +63,10 @@ app.get('/', function (req, res) {
   res.redirect(301, 'http://code.maxmalm.se/ncs/');
 })
 
+app.get('*', function(req, res){
+  res.send('not a valid hex string (6 chars)', 404);
+});
+
 var server = app.listen(process.env.PORT || 3300, function () {
   var host = server.address().address;
   var port = server.address().port;
