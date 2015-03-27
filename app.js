@@ -59,7 +59,7 @@ app.get('/:hex', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-  res.send('Append this URL with <code>/ff00ff</code> for example');
+  res.redirect(301, 'http://code.maxmalm.se/ncs/');
 })
 
 var server = app.listen(process.env.PORT || 3300, function () {
