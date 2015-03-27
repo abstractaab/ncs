@@ -3,9 +3,6 @@ var express = require('express');
 var cheerio = require('cheerio');
 var app = express();
 
-var cachedArray = [];
-var currentIndex = 0;
-
 app.get('/:hex', function (req, res) {
   request.get('http://encycolorpedia.se/' + req.params.hex + '/natural-color-system-ncs').end(function (err, response) {
     res.header("Access-Control-Allow-Origin", "*");
