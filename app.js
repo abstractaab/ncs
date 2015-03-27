@@ -3,7 +3,7 @@ var express = require('express');
 var cheerio = require('cheerio');
 var app = express();
 
-app.get('/:hex', function (req, res) {
+app.get('/:hex([0-9a-f]{6})', function (req, res) {
   request.get('http://encycolorpedia.se/' + req.params.hex + '/natural-color-system-ncs').end(function (err, response) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/json");
